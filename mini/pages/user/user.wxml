@@ -1,0 +1,18 @@
+<view class="lmbox">
+
+  <view class="userbox">
+    <view class="userbox-avatar"><image src="{{user.avatar}}" mode="aspectFit" class="avatar-image"></image></view>
+    <view class="userbox-nickname">{{user.nickname}}</view>
+    <view class="userbox-numbers"><text wx:if="{{user.follow_count>0}}">{{user.follow_count}}关注</text>  <text wx:if="{{user.fans_count>0}}">{{user.fans_count}}粉丝</text></view>
+    <view class="relation-button" wx:if="{{user.id != myuid}}">
+      <button type="primary" plain="true" size="mini" wx:if="{{user.followed == 0}}" bindtap="follow">关注</button>
+      <button type="primary" plain="true" size="mini" wx:if="{{user.followed > 0}}" bindtap="unfollow">已关注</button>
+      <button type="primary" plain="true" size="mini" bindtap="talk" class="left10">私信</button>
+    </view>
+  </view>
+  <view class="feedlist">
+    <feedlist class="feedlist" pullreload="false" url="{{api_base+'feed/uid/'+user.id}}" wx:if="{{show_feed}}"/>
+  </view>
+  
+</view>
+

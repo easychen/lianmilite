@@ -1,0 +1,22 @@
+<view class="boxitem">
+  <view class="boxitem-avatarbox" bindtap="showUser">
+    <image class="boxitem-avatar" src="{{boxdata.from_user.avatar}}" mode="aspectFit"></image>
+  </view>
+  <view class="boxitem-textarea">
+    <view class="boxitem-textlineone">
+      <view class="username" bindtap="showUser">
+        {{boxdata.from_user.nickname}}
+        <text class="userid">@u{{boxdata.from_user.id}}</text>
+      </view>
+      <view class="pubtime" bindtap="showMessage">
+        {{time}}
+      </view>
+    </view>
+    <view class="boxitem-contenttext readcontent" bindtap="showMessage" wx:if="{{boxdata.is_read!=0}}">
+      {{boxdata.text}}
+    </view>
+    <view class="boxitem-contenttext" bindtap="showMessage" wx:if="{{boxdata.is_read==0}}">
+      {{boxdata.text}}
+    </view>
+  </view>
+</view>

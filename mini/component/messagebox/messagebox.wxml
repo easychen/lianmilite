@@ -1,0 +1,11 @@
+<scroll-view
+  scroll-y
+  bindscrolltoupper="onTop"
+  bindscrolltolower="onBottom"
+  class="grouplist"
+  upper-threshold="10"
+>
+  <messageboxitem wx:if="{{list.length>0}}" wx:for="{{list}}" wx:key="{{item.id}}" boxdata="{{item}}" /> 
+  <view class="listloading" wx:if="{{list.length<1 && loading }}">Loading</view>  
+  <view class="listloading" wx:if="{{list.length<1 && !loading }}">还没有数据</view>  
+</scroll-view>

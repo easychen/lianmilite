@@ -1,0 +1,41 @@
+/* pages/talk/talk.wxss */
+.sendbox
+{
+  position: fixed;
+  height: 80rpx;
+  left:0rpx;
+  right:0rpx;
+  bottom:0rpx;
+  background-color: #eee;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  justify-content:center;
+  padding-top:10rpx;
+  padding-right:10rpx;
+  padding-left:10rpx;
+}  
+
+.sendbox-input-box
+{
+  flex:1;
+}
+
+.sendbox-input
+{
+  border: 1rpx solid #09BB07;
+  border-radius: 10rpx;
+  margin-right: 10rpx;
+  height:66rpx;
+  background-color: white;
+  padding-left:10rpx;
+  padding-right:10rpx;
+}
+
+.sendbox-button-box
+{
+  display: flex;
+  height:70rpx;  
+}
+
+

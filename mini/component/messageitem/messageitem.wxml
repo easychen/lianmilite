@@ -1,0 +1,27 @@
+<view class="others" wx:if="{{messagedata.from_uid != my_uid}}">
+<view class="main-box others-box">
+    <view class="avatar-box">
+      <image src="{{messagedata.from_user.avatar}}" mode="aspectFit" class="avatar-image" bindtap="showuser" data-uid="{{messagedata.from_user.id}}"></image>
+    </view>
+    <text class="text others-text">{{messagedata.text}}</text>
+  </view>
+  <view class="time-box others-time-box">
+    {{time}}
+  </view>
+
+</view>
+
+
+<view class="my" wx:if="{{messagedata.from_uid == my_uid}}">
+  <view class="main-box my-box">
+    <view class="avatar-box">
+      <image src="{{messagedata.from_user.avatar}}" mode="aspectFit" class="avatar-image" bindtap="showuser" data-uid="{{messagedata.from_user.id}}"></image>
+    </view>
+    <text class="text my-text">{{messagedata.text}}</text>
+  </view>
+  <view class="time-box my-time-box">
+    {{time}}
+  </view>
+
+</view>
+

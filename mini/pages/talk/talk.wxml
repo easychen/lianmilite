@@ -1,0 +1,8 @@
+<!--pages/talk/talk.wxml-->
+<messagelist to_uid="{{uid}}" wx:if="{{show_message_list}}" />
+<form bindsubmit="talk">
+<view class="sendbox">
+<view class="sendbox-input-box"><input class="sendbox-input" name="text" value="{{text}}"></input></view>
+<view class="sendbox-button-box"><button class="sendbox-button" type="primary" size="mini" form-type="submit">发送</button></view>
+</view>
+</form>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "messagebox": "/component/messagebox/messagebox"
+  },
+  "navigationBarTitleText": "消息箱"
+}

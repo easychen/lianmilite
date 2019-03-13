@@ -1,0 +1,14 @@
+<view class="lmbox">
+
+  <view class="userbox">
+    <view class="userbox-avatar"><open-data type="userAvatarUrl"></open-data></view>
+    <view class="userbox-nickname"><open-data type="userNickName"></open-data></view>
+    <view class="userbox-numbers"><text wx:if="{{user.follow_count>0}}">{{user.follow_count}}关注</text>  <text wx:if="{{user.fans_count>0}}">{{user.fans_count}}粉丝</text></view>
+  </view>
+  <view class="menu">
+    <view class="menu-item" bindtap="info">
+      <view class="menu-item-text">关于</view>
+      <image class="menu-item-icon" src="/images/chevron-right@2x.png" mode="aspectFit"></image>
+    </view>
+  </view>
+</view>

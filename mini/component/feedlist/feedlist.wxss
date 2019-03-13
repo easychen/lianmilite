@@ -1,0 +1,21 @@
+/* component/feedlist.wxss */
+/* scroll-view
+{
+  background-color: red;
+  overflow-y: scroll;
+} */
+
+.feedlist
+{
+  height: 100%;
+}
+
+.listloading
+{
+  padding:30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60rpx;
+  color:#09BB07;
+}

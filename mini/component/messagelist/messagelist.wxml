@@ -1,0 +1,13 @@
+<scroll-view
+  scroll-y
+  bindscrolltoupper="onTop"
+  class="messagelist"
+  upper-threshold="10"
+  scroll-into-view="{{scrolldown}}"
+>
+  <messageitem wx:if="{{list.length>0}}" wx:for="{{list}}" wx:key="{{item.id}}" messagedata="{{item}}" id="mid-{{item.id}}"/> 
+  <view class="listloading" wx:if="{{list.length<1 && loading }}">Loading</view>  
+  <view class="listloading" wx:if="{{list.length<1 && !loading }}">还没有数据</view>  
+</scroll-view>
+
+

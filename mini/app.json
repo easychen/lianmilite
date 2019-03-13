@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/auth/auth",
+    "pages/publish/publish",
+    "pages/message/message",
+    "pages/account/account",
+    "pages/modify/modify",
+    "pages/rt/rt",
+    "pages/user/user",
+    "pages/feed/feed",
+    "pages/talk/talk"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "莲米粒",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home.active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "iconPath": "images/publish.png",
+        "selectedIconPath": "images/publish.active.png",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "iconPath": "images/message.png",
+        "selectedIconPath": "images/message.active.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/account/account",
+        "iconPath": "images/account.png",
+        "selectedIconPath": "images/account.active.png",
+        "text": "账户"
+      }
+    ]
+  }
+}

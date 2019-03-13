@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-action-sheet": "/miniprogram_npm/vant-weapp/action-sheet/index"
+  }
+}

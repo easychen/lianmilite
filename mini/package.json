@@ -1,0 +1,26 @@
+{
+  "name": "mini",
+  "version": "1.0.0",
+  "description": "莲米粒小程序客户端",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easychen/lianmilite-mini.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/easychen/lianmilite-mini/issues"
+  },
+  "homepage": "https://github.com/easychen/lianmilite-mini#readme",
+  "dependencies": {
+    "eventemitter3": "^3.1.0",
+    "miniprogram-computed": "0.0.7",
+    "timeago.js": "^4.0.0-beta.2",
+    "vant-weapp": "^0.5.5"
+  }
+}

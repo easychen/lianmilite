@@ -1,0 +1,103 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "a28c4a54300a1a5dc832d4bd14974198",
+    "content-hash": "3119ab3d1fcd0ef50a94421ab202ff5b",
+    "packages": [
+        {
+            "name": "jiaweixs/simplecache",
+            "version": "1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kulokai/simplecache.git",
+                "reference": "7848ce8eddd410292436dcc449e150a2e2d4a923"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kulokai/simplecache/zipball/7848ce8eddd410292436dcc449e150a2e2d4a923",
+                "reference": "7848ce8eddd410292436dcc449e150a2e2d4a923",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9 || ^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JiaweiXS\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "JiaweiXS",
+                    "email": "kurobafear@hotmail.com"
+                }
+            ],
+            "description": "A PHP Simple Cache Base on File.",
+            "keywords": [
+                "cache",
+                "simple cache"
+            ],
+            "time": "2017-08-24 06:23:28"
+        },
+        {
+            "name": "jiaweixs/weapp",
+            "version": "1.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kulokai/weapp_wechat_miniapp_sdk.git",
+                "reference": "89549f681e091e653c6eacd5a695ad7e5b98e910"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kulokai/weapp_wechat_miniapp_sdk/zipball/89549f681e091e653c6eacd5a695ad7e5b98e910",
+                "reference": "89549f681e091e653c6eacd5a695ad7e5b98e910",
+                "shasum": ""
+            },
+            "require": {
+                "jiaweixs/simplecache": "*",
+                "php": "^5.5.9 || ^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JiaweiXS\\WeApp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "JiaweiXS",
+                    "email": "kurobafear@hotmail.com"
+                }
+            ],
+            "description": "一个微信小程序服务端SDK，集成小程序服务端所有接口。A SDK of WeChat mini app.",
+            "keywords": [
+                "miniapp",
+                "wechat",
+                "wechat app"
+            ],
+            "time": "2017-12-14 08:24:30"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.3.3"
+    },
+    "platform-dev": []
+}

@@ -1,0 +1,82 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.1",
+	"appid": "wxe4a50bb9ad132652",
+	"projectname": "mini",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 5,
+			"list": [
+				{
+					"id": -1,
+					"name": "auth",
+					"pathName": "pages/auth/auth",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "账户",
+					"pathName": "pages/account/account",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发布",
+					"pathName": "pages/publish/publish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/user/user",
+					"query": "uid=8",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "talk",
+					"pathName": "pages/talk/talk",
+					"query": "uid=8&nickname=someone",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "message box",
+					"pathName": "pages/message/message",
+					"scene": null
+				}
+			]
+		}
+	}
+}

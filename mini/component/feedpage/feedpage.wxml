@@ -1,0 +1,10 @@
+<view class="preview">
+<feeditem feeddata="{{feed}}" inlist="false" bind:menu="onMenu" />
+</view>
+<van-action-sheet 
+  show="{{show_menu}}" 
+  actions="{{actions}}" 
+  cancel-text="取消" 
+  bind:close="onClose" 
+  bind:cancel="onClose" 
+  bind:select="onSelect"/>

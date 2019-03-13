@@ -1,0 +1,12 @@
+<view class="pagebox">
+  <form bindsubmit="rt">
+    <view class="pubbox"><textarea auto-height placeholder="转发的同时评论两句？" placeholder-class="pubbox-pre" name="content" value="{{content}}" bindinput="onChange"/></view>
+    <view class="pubbutton"><button type="primary" form-type="submit" plain="true" size="mini" wx:if="{{button_enabled}}">转发</button><button type="primary" form-type="submit" plain="true" size="mini" wx:if="{{!button_enabled}}">准备中...</button></view>
+  </form>
+</view>
+
+<view class="preview" >
+  <feeditem feeddata="{{origin}}" />
+</view>
+  
+

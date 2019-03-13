@@ -1,0 +1,92 @@
+<!--component/feeditem/feeditem.wxml-->
+<view class="scroll-view-item" wx:if="{{feeddata.id}}">
+<!--转发样式-->
+<view wx:if="{{feeddata.rt_id>0}}" class="rt-row">
+<view class="rt-header">
+  <view class="rt-avatar"><image src="/images/retweet.green@2x.png" mode="aspectFit" class="rt-icon" bindtap="author" data-uid="{{feeddata.rt_user.id}}"></image></view>
+  <view class="rt-text">
+
+    <view class="firstline">
+      <view class="rt-userinfo">
+        <view class="username" bindtap="author" data-uid="{{feeddata.rt_user.id}}">
+          {{feeddata.rt_user.nickname}} 
+          <text class="uidspan" >@u{{feeddata.rt_user.id}}</text>
+          <text class="rttime">{{rt_time}}</text>
+        </view>
+      
+      </view>
+    <view class="rt-menu" bindtap="menu" wx:if="{{feeddata.rt_user.id == current_uid}}">
+      <image src="/images/arrow.down@2x.png" mode="aspectFit" class="menu-icon" ></image>
+    </view>
+    </view>
+    <text class="rt-content" wx:if="{{feeddata.rt_content.length>0}}">{{feeddata.rt_content}}</text>
+    
+  </view>
+  
+</view>
+<view class="rt-origin rt-deleted" wx:if="{{ !feeddata.user.id || feeddata.user.id < 1 }}">
+<text class="deleted">原文已被删除</text>
+</view>
+<view class="rt-origin" wx:if="{{feeddata.user && feeddata.user.id>0}}">
+  <view class="feedrow" >
+    <view class="avatar"><image src="{{feeddata.user.avatar}}" mode="aspectFit" class="avatar-image" bindtap="author" data-uid="{{feeddata.user.id}}"></image></view>
+    <view class="text">
+      <view class="userinfo">
+        <view class="user-left">
+          <view class="username" bindtap="author" data-uid="{{feeddata.user.id}}">{{feeddata.user.nickname}} <text class="uidspan">@u{{feeddata.user.id}}</text></view>
+          <view class="pubtime">{{time}}</view>
+        </view>
+        <view class="user-right">
+          <!-- <image src="/images/arrow.down@2x.png" mode="aspectFit" class="menu-icon" bindtap="menu" wx:if="{{feeddata.user.id == current_uid}}"></image> -->
+        </view>
+      </view>
+
+      <text class="content" bindtap="detail" data-fid="{{feeddata.id}}">{{feeddata.content}}</text>
+
+    <view class="actionbar">
+    <image src="/images/retweet@2x.png" mode="aspectFit" class="action-icon" bindtap="rt"></image>
+    <text bindtap="rt">转发</text>
+    </view>
+
+  </view>
+
+</view>
+
+</view>
+
+</view>
+
+
+
+
+<!--直发样式-->
+
+<view class="feedrow" wx:if="{{!feeddata.rt_id || feeddata.rt_id<1}}">
+  <view class="avatar"><image src="{{feeddata.user.avatar}}" mode="aspectFit" class="avatar-image" bindtap="author" data-uid="{{feeddata.user.id}}"></image></view>
+  <view class="text">
+    <view class="userinfo">
+      <view class="user-left">
+        <view class="username" bindtap="author" data-uid="{{feeddata.user.id}}">{{feeddata.user.nickname}} <text class="uidspan">@u{{feeddata.user.id}}</text></view>
+        <view class="pubtime">{{time}}</view>
+      </view>
+      <view class="user-right" bindtap="menu" wx:if="{{feeddata.user.id == current_uid}}">
+        <image src="/images/arrow.down@2x.png" mode="aspectFit" class="menu-icon"></image>
+      </view>
+      
+      
+
+    </view>
+    <view class="content" bindtap="detail" data-fid="{{feeddata.id}}">
+      {{feeddata.content}}
+    </view>
+
+    <view class="actionbar">
+    <image src="/images/retweet@2x.png" mode="aspectFit" class="action-icon" bindtap="rt"></image>
+    <text bindtap="rt">转发</text>
+    </view>
+
+  </view>
+
+</view>
+
+</view>

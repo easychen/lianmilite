@@ -1,0 +1,194 @@
+/* .scroll-view-item
+{
+  background-color: whitesmoke;
+  height: 400rpx;
+} */
+
+.feedrow
+{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #eee;
+  padding-bottom: 20rpx;
+
+}
+
+.feedrow:first-child
+{
+  margin-top: 20rpx;
+}
+
+.avatar
+{
+  max-width:140rpx;
+  min-width:140rpx;
+}
+
+.avatar-image
+{
+  max-width: 120rpx;
+  max-height: 120rpx;
+  border-radius: 50%;
+  margin-left:20rpx;
+}
+
+.text
+{
+  flex:1;
+  padding-left:20rpx;
+  text-align: left;
+}
+
+.userinfo
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.menu-icon
+{
+  max-width: 40rpx;
+  max-height: 40rpx;
+  margin-right:30rpx;
+}
+
+.username
+{
+  color:#09BB07;
+}
+
+.uidspan
+{
+  color:#CCC;
+  font-size: 30rpx;
+}
+
+.pubtime
+{
+  color:#CCC;
+  font-size: 30rpx;
+}
+
+.content
+{
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  font-size: 36rpx;
+  color:#333;
+
+  display: block;
+  max-width:calc(100vw - 180rpx);
+  text-align: left;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+.actionbar
+{
+  color:#AAA;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.action-icon
+{
+  max-width: 40rpx;
+  max-height: 40rpx;
+  margin-right:10rpx;
+}
+
+.rt-header
+{
+  display: flex;
+  flex-direction: row;
+  min-height: 80rpx;
+}
+
+.rt-origin
+{
+  background-color: #F1FDF0;
+  padding-top:20rpx;
+}
+
+.rt-icon
+{
+  max-width: 40rpx;
+  max-height: 40rpx;
+  margin-right:10rpx;
+  margin-top: 16rpx;
+}
+
+.rt-avatar
+{
+  min-width:160rpx;
+  max-width:160rpx;
+  /* background-color: red; */
+  justify-content:flex-end;
+  display:flex;
+}
+
+.rt-text
+{
+  flex:1;
+}
+
+.firstline
+{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  flex:1;
+  padding-top:10rpx;
+}
+
+.rt-content
+{
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  font-size: 36rpx;
+  color:#333;
+
+  display: block;
+  max-width:calc(100vw - 180rpx);
+  text-align: left;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+.rttime
+{
+  color:#CCC;
+  font-size: 30rpx;
+  margin-left:20rpx;
+}
+
+.rt-menu, .user-right
+{
+  /* background-color: red; */
+  min-width: 100rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.deleted
+{
+  color:#CCC;
+  font-size: 30rpx;
+}
+
+.rt-deleted
+{
+  padding-bottom: 20rpx;
+}
+
+.flex-center
+{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}

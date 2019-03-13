@@ -1,0 +1,481 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>jscpd, Copy/Paste Detector</title><link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.1.0/echarts.js" integrity="sha256-5oGDDQdB95LVt6XQcCR1rIRWUIoDC9vtM/TmZFmmvHc=" crossorigin="anonymous"></script><script>Prism.plugins.autoloader.languages_path = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/';
+function collapseExpandAll() {
+  document.querySelectorAll('.clone').forEach(function(cloneElement) {
+    cloneElement.classList.remove('expanded');
+  });
+  document.querySelector('.clones').classList.toggle('collapsed');
+}
+
+function expandCollapse(event) {
+  if (event.target.classList.contains('expand') || event.target.classList.contains('collapse')) {
+    this.classList.toggle('expanded');
+  }
+
+}
+
+window.onload = function() {
+  echarts.init(document.getElementById('totalChart')).setOption({
+    title: {
+      text: 'Copy/paste report',
+      x: 'center'
+    },
+    tooltip: {
+      trigger: 'item',
+      formatter: "{a} <br/>{b} : {c} lines"
+    },
+    series: [
+      {
+        name: 'Copy/Paste report',
+        type: 'pie',
+        data: [
+          { value: 6701, name: 'Total' },
+          { value: 165, name: 'Copy/Pasted' },
+        ]
+      }
+    ]
+  });
+
+  echarts.init(document.getElementById('formatsChart')).setOption({
+    title: {
+      text: 'Formats analyzed',
+      x: 'center'
+    },
+    tooltip: {
+      trigger: 'item',
+      formatter: "{a} <br/>{b} : {c} lines"
+    },
+    label: {
+      normal: {
+        show: false,
+        position: 'center'
+      },
+      emphasis: {
+        show: true,
+        textStyle: {
+          fontSize: '30',
+          fontWeight: 'bold'
+        }
+      }
+    },
+    labelLine: {
+      normal: {
+        show: false
+      }
+    },
+    series: [
+      {
+        name: 'Formats analyzed',
+        type: 'pie',
+        data: [{"value":6230,"name":"javascript"},{"value":471,"name":"json"}]
+      }
+    ]
+  });
+
+  document.querySelectorAll('.clone').forEach(function(cloneElement) {
+    cloneElement.addEventListener('click', expandCollapse)
+  });
+}
+</script><style>* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(61, 146, 201);
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+h3 {
+  font-weight: 100;
+}
+
+#layout {
+  padding: 0;
+}
+
+.header {
+  text-align: center;
+  top: auto;
+  margin: 3em auto;
+}
+
+.sidebar {
+  background: rgb(61, 79, 93);
+  color: #fff;
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-item {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+
+.nav-item a {
+  background: transparent;
+  border: 2px solid rgb(176, 202, 219);
+  color: #fff;
+  margin-top: 1em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 85%;
+}
+
+.nav-item a:hover,
+.nav-item a:focus {
+  border: 2px solid rgb(61, 146, 201);
+  text-decoration: none;
+}
+
+.content-subhead {
+  text-transform: uppercase;
+  color: #aaa;
+  border-bottom: 1px solid #eee;
+  padding: 0.4em 0;
+  font-size: 120%;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.content {
+  padding: 2em 1em 0;
+}
+
+a.top {
+  padding-left: 1em;
+}
+
+.clone {
+  padding-bottom: 2em;
+
+}
+
+.clone header button {
+  float: left;
+  font-size: 110%;
+  margin: 0.1em 0.3em;
+}
+
+.clone .expand {
+  display: none;
+}
+
+.clone .collapse {
+  display: block;
+}
+
+.collapsed .clone pre {
+  display: none;
+}
+
+.collapsed .clone .expand {
+  display: block;
+}
+
+.collapsed .clone .collapse {
+  display: none;
+}
+
+.clone.expanded .expand {
+  display: none !important;
+}
+
+.clone.expanded .collapse {
+  display: block !important;
+}
+
+.clone.expanded pre {
+  display: block !important;
+}
+
+.clone pre {
+  max-width: 1000px;
+}
+
+.clone pre .meta {
+  font-family: "Courier New", Courier, Monospace;
+  display: block;
+  float: left;
+  line-height: 1.5;
+  margin: 0 1em 0 -1em;
+  border-right: 0.15em solid #444;
+  text-align: right;
+}
+
+.clone pre .meta span {
+  display: block;
+  padding: 0 .5em 0 1em;
+
+}
+
+.clone pre .cl {
+  display: block;
+  clear: both;
+}
+
+.clone-title {
+  font-size: 1.1em;
+  color: #222;
+  margin-bottom: 0.2em;
+}
+
+.clone-description {
+  font-family: Georgia, "Cambria", serif;
+  color: #444;
+  line-height: 1.1em;
+  font-size: 80%;
+}
+
+.controls {
+  text-align: right;
+}
+
+.controls button {
+  font-size: 70%;
+}
+
+.mode-stats {
+  color: #999;
+  font-size: 90%;
+  margin: 0;
+}
+
+.mode-rate {
+  margin: 0 0.1em;
+  padding: 0.3em 1em;
+  color: #fff;
+  background: #999;
+  font-size: 80%;
+}
+
+.stats {
+  width: 100%;
+  margin: 1em 0;
+}
+
+.clones-excellent {
+  background: #5aba59;
+}
+
+.clones-fine {
+  background: #4d85d1;
+}
+
+.clones-danger {
+  background: #df2d4f;
+}
+
+.footer {
+  padding: 1em 0;
+  color: #999;
+  font-size: 70%;
+}
+
+@media (min-width: 48em) {
+  .content {
+    padding: 2em 3em 0;
+    margin-left: 25%;
+  }
+
+  .header {
+    text-align: right;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    width: 25%;
+    bottom: 0;
+    padding: 1em;
+  }
+
+  .footer {
+    text-align: center;
+
+  }
+}</style></head><body><div class="pure-g" id="layout"><div class="sidebar pure-u-1 pure-u-md-1-4"><div class="header"><img src="https://raw.githubusercontent.com/kucherenko/jscpd/1.0.0-alpha/assets/logo-small-box.svg?sanitize=true" width="190"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="pure-button" href="#javascript">javascript</a></li><li class="nav-item"><a class="pure-button" href="#json">json</a></li></ul></nav></div></div><div class="content pure-u-1 pure-u-md-3-4"><a name="top"></a><div class="pure-g"><div class="pure-u-1-2 pure-u-md-1" id="totalChart" style="min-height:20em;"></div><div class="pure-u-1-2 pure-u-md-1" id="formatsChart" style="min-height:20em;"></div></div><div class="controls"><div class="pure-u"><button class="pure-button" onclick="collapseExpandAll()">Collapse/Expand All</button></div></div><table class="pure-table stats"><thead><tr><th>Total files</th><th>Total lines of code</th><th>Duplicated lines</th><th>% of duplications</th></tr></thead><tbody><tr><td>140</td><td>6701</td><td>165</td><td>2.46%</td></tr></tbody></table><div class="clones collapsed"><a name="javascript"></a><h1 class="content-subhead">javascript</h1><div class="mode-stats"><p><span class="mode-rate">2.65%</span> Total files: 89, total lines of code: 6230, duplicated lines: 165<a class="top" href="#top">[Top ↑↑↑]</a></p></div><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">component/messagebox/messagebox.js[5:3 - 23:57]<br/>component/feedlist/feedlist.js[7:3 - 26:34]</div></header><div class="clone-description"><pre><span class="meta"><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span></span><span class="meta"><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span></span><code class="language-javascript">properties: {
+    url: String,
+    pullreload: Boolean
+  },
+
+  data: {
+    list: [],
+    url: '',
+    sinceid: 0,
+    show_menu: false,
+    actions: [],
+    pullreload: false,
+    loading: false
+  },
+
+  lifetimes: {
+    async attached() {
+      await this.loadList(0);
+      // app.globalData.event.on('feedboxupdate', e =&gt; {</code><span class="cl"></span></pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">component/messagebox/messagebox.js[40:7 - 48:11]<br/>component/feedlist/feedlist.js[69:7 - 75:32]</div></header><div class="clone-description"><pre><span class="meta"><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span></span><span class="meta"><span>69</span><span>70</span><span>71</span><span>72</span><span>73</span><span>74</span><span>75</span><span>76</span><span>77</span></span><code class="language-javascript">this.setData({ &quot;loading&quot;: true });
+
+      await wx.pro.request({
+        url: this.data.url,
+        data: { 'token': app.globalData.token, 'since': sinceid }
+      }).then(ret =&gt; {
+        
+
+        if</code><span class="cl"></span></pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">component/messagebox/messagebox.js[58:21 - 68:10]<br/>component/feedlist/feedlist.js[88:34 - 95:42]</div></header><div class="clone-description"><pre><span class="meta"><span>58</span><span>59</span><span>60</span><span>61</span><span>62</span><span>63</span><span>64</span><span>65</span><span>66</span><span>67</span><span>68</span></span><span class="meta"><span>88</span><span>89</span><span>90</span><span>91</span><span>92</span><span>93</span><span>94</span><span>95</span><span>96</span><span>97</span><span>98</span></span><code class="language-javascript">: this.data.list.concat(ret.data.data), 
+              &quot;sinceid&quot;: parseInt(ret.data.data[ret.data.data.length - 1].id, 10) 
+            });
+
+            wx.showToast({ title: &quot;更多内容已载入&quot;, icon: 'none' });
+          }
+
+          this.setData({ &quot;loading&quot;: false });
+
+
+        }</code><span class="cl"></span></pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">miniprogram_npm/timeago.js/index.js[1:1 - 7:25]<br/>miniprogram_npm/eventemitter3/index.js[1:1 - 7:25]</div></header><div class="clone-description"><pre><span class="meta"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span></span><span class="meta"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span></span><code class="language-javascript">module.exports = (function() {
+var __MODS__ = {};
+var __DEFINE__ = function(modId, func, req) { var m = { exports: {} }; __MODS__[modId] = { status: 0, func: func, req: req, m: m }; };
+var __REQUIRE__ = function(modId, source) { if(!__MODS__[modId]) return require(source); if(!__MODS__[modId].status) { var m = { exports: {} }; __MODS__[modId].status = 1; __MODS__[modId].func(__MODS__[modId].req, m, m.exports); if(typeof m.exports === &quot;object&quot;) { Object.keys(m.exports).forEach(function(k) { __MODS__[modId].m.exports[k] = m.exports[k]; }); if(m.exports.__esModule) Object.defineProperty(__MODS__[modId].m.exports, &quot;__esModule&quot;, { value: true }); } else { __MODS__[modId].m.exports = m.exports; } } return __MODS__[modId].m.exports; };
+var __REQUIRE_WILDCARD__ = function(obj) { if(obj &amp;&amp; obj.__esModule) { return obj; } else { var newObj = {}; if(obj != null) { for(var k in obj) { if (Object.prototype.hasOwnProperty.call(obj, k)) newObj[k] = obj[k]; } } newObj.default = obj; return newObj; } };
+var __REQUIRE_DEFAULT__ = function(obj) { return obj &amp;&amp; obj.__esModule ? obj.default : obj; };
+__DEFINE__(1551182113049</code><span class="cl"></span></pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">pages/modify/modify.js[20:54 - 40:16]<br/>pages/feed/feed.js[23:5 - 40:15]</div></header><div class="clone-description"><pre><span class="meta"><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span>37</span><span>38</span><span>39</span><span>40</span></span><span class="meta"><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span></span><code class="language-javascript">});
+  },
+
+  async loadFeed()
+  {
+    if ( this.data.fid &lt; 1 )
+    {
+      wx.showToast({ title: &quot;错误的feedid&quot;+this.data.fid, icon: 'none' });
+      return false;
+    }
+    
+    wx.pro.request({
+      url: 'http://192.168.31.131:8000/feed/detail',
+      data: { 'token': app.globalData.token, 'id': this.data.fid }
+    })
+      .then(ret =&gt; {
+        if (ret.data.code == 0) {
+          
+          // console.log( ret.data.data );
+
+          const</code><span class="cl"></span></pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">pages/publish/publish.js[30:19 - 40:53]<br/>pages/modify/modify.js[65:9 - 74:52]</div></header><div class="clone-description"><pre><span class="meta"><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span>37</span><span>38</span><span>39</span><span>40</span></span><span class="meta"><span>65</span><span>66</span><span>67</span><span>68</span><span>69</span><span>70</span><span>71</span><span>72</span><span>73</span><span>74</span><span>75</span></span><code class="language-javascript">(e)
+  {
+    const content = e.detail.value.content;
+    if( content.length &lt; 1 )
+    {
+      wx.showToast({ title: '发布内容不能为空', icon: 'none' });
+      return false;
+    }
+
+    wx.pro.request({
+      url: 'http://192.168.31.131:8000/feed/publish'</code><span class="cl"></span></pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">pages/publish/publish.js[41:65 - 48:44]<br/>pages/modify/modify.js[75:86 - 83:43]</div></header><div class="clone-description"><pre><span class="meta"><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span></span><span class="meta"><span>75</span><span>76</span><span>77</span><span>78</span><span>79</span><span>80</span><span>81</span><span>82</span></span><code class="language-javascript">},
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' }})
+      .then(ret =&gt; {
+        if (ret.data.code == 0) {
+          if (ret.data.data.id &gt; 0) {
+            // 发布成功
+            wx.showToast({ title: '内容已成功发布'</code><span class="cl"></span></pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">pages/rt/rt.js[12:11 - 36:14]<br/>pages/modify/modify.js[12:9 - 39:43]</div></header><div class="clone-description"><pre><span class="meta"><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span></span><span class="meta"><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span></span><code class="language-javascript">:{},
+    button_enabled: false
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad(options) {
+    this.setData({ &quot;fid&quot;: parseInt(options.fid, 10) });
+  },
+
+  async loadFeed() {
+    if (this.data.fid &lt; 1) {
+      wx.showToast({ title: &quot;错误的feedid&quot; + this.data.fid, icon: 'none' });
+      return false;
+    }
+
+    wx.pro.request({
+      url: 'http://192.168.31.131:8000/feed/detail',
+      data: { 'token': app.globalData.token, 'id': this.data.fid }
+    })
+      .then(ret =&gt; {
+        if (ret.data.code == 0) {
+
+          let</code><span class="cl"></span></pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">pages/rt/rt.js[42:43 - 61:9]<br/>pages/modify/modify.js[41:89 - 59:10]</div></header><div class="clone-description"><pre><span class="meta"><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span><span>49</span><span>50</span><span>51</span><span>52</span><span>53</span><span>54</span><span>55</span><span>56</span><span>57</span><span>58</span><span>59</span><span>60</span><span>61</span></span><span class="meta"><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span><span>49</span><span>50</span><span>51</span><span>52</span><span>53</span><span>54</span><span>55</span><span>56</span><span>57</span><span>58</span><span>59</span><span>60</span></span><code class="language-javascript">});
+        }
+        else {
+          wx.showToast({ title: ret.data.message, icon: 'none' });
+        }
+      })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  async onReady() {
+    await app.code2token();
+    await this.loadFeed();
+    this.setData({ 'button_enabled': true });
+  },
+
+  onChange( e )
+  {
+    this</code><span class="cl"></span></pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">pages/rt/rt.js[68:48 - 77:41]<br/>pages/modify/modify.js[74:52 - 83:43]</div></header><div class="clone-description"><pre><span class="meta"><span>68</span><span>69</span><span>70</span><span>71</span><span>72</span><span>73</span><span>74</span><span>75</span><span>76</span><span>77</span></span><span class="meta"><span>74</span><span>75</span><span>76</span><span>77</span><span>78</span><span>79</span><span>80</span><span>81</span><span>82</span><span>83</span></span><code class="language-javascript">,
+      data: { 'token': app.globalData.token, 'content': content, 'id': this.data.fid },
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' }
+    })
+      .then(ret =&gt; {
+        if (ret.data.code == 0) {
+          if (ret.data.data.id &gt; 0) {
+            // 发布成功
+            wx.showToast({ title: '转发成功'</code><span class="cl"></span></pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">pages/user/user.js[40:66 - 51:7]<br/>pages/account/account.js[20:72 - 32:7]</div></header><div class="clone-description"><pre><span class="meta"><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span><span>49</span><span>50</span><span>51</span></span><span class="meta"><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span></span><code class="language-javascript">}
+    })
+      .then(ret =&gt; {
+        if (ret.data.code == 0) {
+          this.setData({ &quot;user&quot;: ret.data.data });
+        }
+        else {
+          wx.showToast({ title: ret.data.message, icon: 'none' });
+        }
+      })
+  },
+  talk</code><span class="cl"></span></pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">miniprogram_npm/vant-weapp/rate/index.js[1:1 - 3:7]<br/>miniprogram_npm/vant-weapp/dialog/dialog.js[1:1 - 3:4]</div></header><div class="clone-description"><pre><span class="meta"><span>1</span><span>2</span><span>3</span></span><span class="meta"><span>1</span><span>2</span><span>3</span></span><code class="language-javascript">function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i &lt; arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+import</code><span class="cl"></span></pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">miniprogram_npm/vant-weapp/switch-cell/index.js[16:5 - 39:13]<br/>miniprogram_npm/vant-weapp/switch/index.js[14:5 - 37:12]</div></header><div class="clone-description"><pre><span class="meta"><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span>37</span><span>38</span><span>39</span></span><span class="meta"><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span>37</span></span><code class="language-javascript">},
+    activeValue: {
+      type: null,
+      value: true
+    },
+    inactiveValue: {
+      type: null,
+      value: false
+    }
+  },
+  watch: {
+    checked: function checked(value) {
+      this.set({
+        value: value
+      });
+    }
+  },
+  created: function created() {
+    this.set({
+      value: this.data.checked
+    });
+  },
+  methods: {
+    onChange</code><span class="cl"></span></pre></div></section><section class="clone"><header><button class="pure-button expand">+</button><button class="pure-button collapse">-</button><div class="clone-title">miniprogram_npm/vant-weapp/toast/toast.js[1:1 - 3:15]<br/>miniprogram_npm/vant-weapp/dialog/dialog.js[1:1 - 3:23]</div></header><div class="clone-description"><pre><span class="meta"><span>1</span><span>2</span><span>3</span></span><span class="meta"><span>1</span><span>2</span><span>3</span></span><code class="language-javascript">function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i &lt; arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+import { isObj</code><span class="cl"></span></pre></div></section><a name="json"></a><h1 class="content-subhead">json</h1><div class="mode-stats"><p><span class="mode-rate">0%</span> Total files: 51, total lines of code: 471, duplicated lines: 0<a class="top" href="#top">[Top ↑↑↑]</a></p></div></div><div class="footer"><p>© 2013-2018 jscpd, copy/paste detector</p></div></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-730549-17"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag() {
+  dataLayer.push(arguments);
+}
+gtag('js', new Date());
+gtag('config', 'UA-730549-17');</script></body></html>

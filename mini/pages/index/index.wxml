@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="lmbox">
+  <view class="swiper-view">
+    <view class="swiper-tab">
+        <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">热门</view>
+        <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">关注</view>
+    </view>
+  </view>
+
+
+
+  <swiper current="{{currentTab}}" duration="300"  bindchange="swiperTab" wx:if="{{showList}}">
+    <swiper-item >
+    <feedlist class="feedlist" method="feedHot" type="hotFeed" pullreload="true"/>
+    </swiper-item>
+    <swiper-item>
+    <feedlist class="feedlist" method="feedFollowed" type="followedFeed" pullreload="true"/>
+    </swiper-item>
+  </swiper>
+  <view wx:if="{{!showList}}" class="listloading">
+    Loading...
+  </view>
+</view>

@@ -1,0 +1,4 @@
+<view class="container">
+  <button open-type='getUserInfo' bindgetuserinfo='doAuth'>授权</button>
+</view>
+

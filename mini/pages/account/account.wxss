@@ -1,0 +1,73 @@
+/* pages/account/account.wxss */
+.userbox
+{
+  display: flex;
+  flex-direction: column;
+  /* flex:1; */
+  justify-items: center;
+  align-items: center;
+  margin-top: 30rpx;
+  margin-bottom: 50rpx;
+}
+
+.userbox-avatar
+{
+  width: 240rpx;
+  height: 240rpx;
+  border-radius: 50%;
+  overflow:hidden; 
+  border:5rpx solid #09BB07;
+}
+
+.userbox-nickname
+{
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+  color:#09BB07;
+  font-size: 60rpx;
+}
+
+.userbox-numbers
+{
+  color:#AAA;
+  margin-top: 10rpx;
+}
+
+.menu
+{
+  display: flex;
+  flex:1;
+}
+
+.menu-item
+{
+  height:100rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-top:1rpx solid #eee;
+  color:#999;
+}
+
+.menu-item:last-child
+{
+  border-bottom:1rpx solid #eee;
+}
+
+.menu-item-text
+{
+  margin-left: 20rpx;
+  font-size: 36rpx;
+  
+}
+
+.menu-item-icon
+{
+  margin-right: 20rpx;
+  width:36rpx;
+  height:36rpx;
+
+}

@@ -1,0 +1,69 @@
+.swiper-view
+{
+  border-bottom: 1px solid #09BB07;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-tab
+{
+    width: 300rpx;
+    text-align: center;
+    height: 88rpx;
+    line-height: 88rpx;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    font-size: 36rpx;
+}
+
+.swiper-tab-item{
+    width: 30%; 
+    color:#434343;
+}
+
+.active{
+    color:#09BB07;
+    border-bottom: 8rpx solid #09BB07;
+}
+
+swiper
+{
+  text-align: center;
+  height:calc( 100vh - 88rpx );
+}
+
+swiper-item
+{
+  overflow-y: scroll;
+}
+
+.feedlist
+{
+  height: calc( 100vh - 88rpx );
+  background-color: goldenrod;
+}
+
+.scroll-view-item
+{
+  background-color: whitesmoke;
+  height: 400rpx;
+}
+
+.listloading
+{
+  padding:30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60rpx;
+  color:#09BB07;
+}
+
+
+.long
+{
+  height:1900rpx;
+  background-color: red;
+}
+

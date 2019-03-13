@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "messagelist": "/component/messagelist/messagelist"
+  }
+}

@@ -1,0 +1,10 @@
+<view class="pagebox">
+  <form bindsubmit="update">
+    <view class="pubbox"><textarea auto-height placeholder="有什么不开心的事情说出来让别人开心下" placeholder-class="pubbox-pre" name="content" value="{{content}}" bindinput="onChange"/></view>
+    <view class="pubbutton"><button type="primary" form-type="submit" plain="true" size="mini" wx:if="{{button_enabled}}">更新</button><button type="primary" form-type="submit" plain="true" size="mini" wx:if="{{!button_enabled}}">准备中...</button></view>
+  </form>
+</view>
+
+<view class="preview" wx:if="{{feed.content.length>0||feed.rt_content.length>0}}">
+<feeditem feeddata="{{feed}}" />
+</view>

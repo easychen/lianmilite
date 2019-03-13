@@ -1,0 +1,20 @@
+<scroll-view
+  scroll-y
+  bindscrolltoupper="onTop"
+  bindscrolltolower="onBottom"
+  class="feedlist"
+  upper-threshold="10"
+>
+  <feeditem wx:if="{{list.length>0}}" wx:for="{{list}}" wx:key="{{item.id}}" feeddata="{{item}}" bind:menu="onMenu" /> 
+  <view class="listloading" wx:if="{{list.length<1 && loading }}">Loading</view>  
+  <view class="listloading" wx:if="{{list.length<1 && !loading }}">还没有数据</view>  
+</scroll-view>
+
+<van-action-sheet 
+  show="{{show_menu}}" 
+  actions="{{actions}}" 
+  cancel-text="取消" 
+  bind:close="onClose" 
+  bind:cancel="onClose" 
+  bind:select="onSelect"
+/>

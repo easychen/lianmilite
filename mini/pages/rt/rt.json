@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "feeditem": "/component/feeditem/feeditem"
+  },
+  "navigationBarTitleText": "转发"
+}

@@ -1,0 +1,6 @@
+/* component/messagelist/messagelist.wxss */
+.messagelist
+{
+  /* height:calc(100vh-300rpx); */
+  height:calc( 100vh - 100rpx );
+}

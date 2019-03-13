@@ -1,0 +1,29 @@
+.pagebox
+{
+  margin: 20rpx;
+}
+
+.pubbox
+{
+  border: 1rpx solid #09BB07;
+  padding: 20rpx;
+  min-height: 60rpx;
+  border-radius: 3px;
+}
+
+.pubbox-pre
+{
+  font-size: 32rpx;
+}
+
+.pubbutton
+{
+  margin-top: 20rpx;
+}
+
+.preview
+{
+  border-top:1rpx solid #eee;
+  padding-top:20rpx;
+  margin-top:40rpx;
+}

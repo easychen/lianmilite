@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "feeditem": "/component/feeditem/feeditem",
+    "van-action-sheet": "/miniprogram_npm/vant-weapp/action-sheet/index"
+  }
+}
