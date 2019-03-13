@@ -10,30 +10,35 @@
 ## 安装说明
 
 ### 首先配置数据库
-1. 建立一个数据库，导入 api/docs/lianmilite.sql
-2. 打开 api/config/database.php , 填写数据库相关信息
+1. 建立一个数据库，导入 `api/docs/lianmilite.sql`
+2. 打开 `api/config/database.php` , 填写数据库相关信息
 
 ### 启动API
 
 API 需要rewrite。
 
 #### 本地测试时：
-1. cd api
-2. 创建 config/hide.php，内容为
+1. `cd api`
+2. 创建 `config/hide.php`，内容为
 ```
 <?php
 $GLOBALS['lpconfig']['wechat_miniapp_id'] = '小程序appid';
 $GLOBALS['lpconfig']['wechat_miniapp_secret'] = '小程序appsecret';
 ```
-3.php -S localhost:8000 route.php
-注意要带 route.php 参数，不然不支持 rewrite。
+3.启动测试服务器
+```php -S localhost:8000 route.php```
+注意要带 `route.php` 参数，不然不支持 rewrite。
 
 
 #### 线上部署时
-修改 api/sample.htaccess 为 .htaccess 部署于 Apache 即可。
+修改 `api/sample.htaccess` 为 `.htaccess` 后可用于 Apache 配置。
 
-### 启动小程序
-用微信开发者工具打开 mini目录，修改appid即可。
+### 小程序部分
 
+#### 启动
+用微信开发者工具打开 `mini` 目录，修改 `appid` 即可。
+
+#### 修改API接口地址
+如要修改API地址，打开`mini/app.js`修改最后一行。
 
 
