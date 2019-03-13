@@ -67,7 +67,7 @@ Second, for teaching and presentation. Most of the small program tutorials on th
 The API requires rewrite.
 
 #### When testing locally:
-`cd api`
+1. `cd api`
 2. Create `config/hide.php` with the content
 ```
 <?php
