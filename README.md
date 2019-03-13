@@ -46,7 +46,7 @@ $GLOBALS['lpconfig']['wechat_miniapp_secret'] = '小程序appsecret';
 
 # 机翻英文 | English intro that machine translated
 
-#莲米粒 🎈 LianmiLite
+# 莲米粒 🎈 LianmiLite
 
 LianmiLite is a timeline application based on the PHP+MySQL+WeChat mini programe stack with user login, publish, modify, delete and retweet feed, and private message chat module.
 
