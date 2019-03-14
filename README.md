@@ -1,6 +1,8 @@
 # 莲米粒 🎈 LianmiLite
 莲米粒是一个基于PHP+MySQL+微信小程序技术栈的、拥有用户登入、发布、修改、删除和转发信息、以及私信聊天模块的信息流应用。
 
+[![Feature Requests](http://feathub.com/easychen/lianmilite?format=svg)](http://feathub.com/easychen/lianmilite)
+
 ![](./lianmilite.gif)
 
 其目的有两个，首先是作为二次开发的基础项目。绝大部分应用、即使是工具类的，一旦用户变多以后，就会有添加私信和信息流系统的需求。你可以在这个系统上加上业务模块，很快的修改出一个可用的、带社会化属性的产品。
